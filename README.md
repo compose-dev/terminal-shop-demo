@@ -17,5 +17,4 @@ You can run this demo yourself in less than 3 minutes.
 
 The demo is based on terminal.shop's tools in their [repo](https://github.com/terminaldotshop/terminal/tree/dev/packages/interval/src/routes).
 
-The demo is not 1-1 with the terminal.shop admin tools, but it comes close enough.
-
+The demo is not 1-1 with the terminal.shop admin tools and takes quite a few liberties with fake data, but it gets the point across.
