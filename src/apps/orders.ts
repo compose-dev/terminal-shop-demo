@@ -81,7 +81,7 @@ const ordersApp = new Compose.App({
 
     page.add(() =>
       ui.stack([
-        ui.row(
+        ui.distributedRow(
           [
             ui.header("Orders"),
             ui.cond(needsPrinting.length > 0, {
@@ -91,7 +91,6 @@ const ordersApp = new Compose.App({
               }),
             }),
           ],
-          { align: "center", justify: "between" }
         ),
         ui.table("orders-table", orders, {
           allowSelect: false,

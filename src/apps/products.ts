@@ -57,19 +57,13 @@ const productsApp = new Compose.App({
 
     page.add(() =>
       ui.stack([
-        ui.row(
-          [
-            ui.header("Products"),
-            ui.button("create-product", {
-              label: "Create new",
-              onClick: createProduct,
-            }),
-          ],
-          {
-            align: "center",
-            justify: "between",
-          }
-        ),
+        ui.distributedRow([
+          ui.header("Products"),
+          ui.button("create-product", {
+            label: "Create new",
+            onClick: createProduct,
+          }),
+        ]),
         ui.table("products-table", products, {
           columns: ["id", "name", "description", "numVariants"],
           actions: [
@@ -209,31 +203,25 @@ const productDetailsApp = new Compose.App({
 
     page.add(() =>
       ui.stack([
-        ui.row(
-          [
-            ui.stack([ui.header(product.name)]),
-            ui.row(
-              [
-                ui.button("edit-product", {
-                  label: "Edit",
-                  appearance: "outline",
-                  onClick: editProduct,
-                }),
-                ui.button("create-variant", {
-                  label: "Create variant",
-                  onClick: createVariant,
-                }),
-              ],
-              {
-                justify: "end",
-              }
-            ),
-          ],
-          {
-            align: "center",
-            justify: "between",
-          }
-        ),
+        ui.distributedRow([
+          ui.stack([ui.header(product.name)]),
+          ui.row(
+            [
+              ui.button("edit-product", {
+                label: "Edit",
+                appearance: "outline",
+                onClick: editProduct,
+              }),
+              ui.button("create-variant", {
+                label: "Create variant",
+                onClick: createVariant,
+              }),
+            ],
+            {
+              justify: "end",
+            }
+          ),
+        ]),
         ui.text([
           ui.text("Description:", {
             style: { textDecoration: "underline" },
